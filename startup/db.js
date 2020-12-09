@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
-const db = "mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getircase-study?retryWrites=true"
+const config = require('config');
+
 
 module.exports = function () {
+    const db = config.get('db');
     mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
         .then(() => console.log('Connected'))
 }
