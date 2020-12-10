@@ -50,8 +50,8 @@ router.post('/', (req, res) => {
             });
         })
         .catch(err => {
-            res.status(400).send({
-                code: 400,
+            res.status(500).send({
+                code: 500,
                 msg: err.message,
                 records: []
             });
