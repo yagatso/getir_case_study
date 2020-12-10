@@ -21,7 +21,7 @@ router.post('/', (req, res) => {
                 totalCount: { add: ["$minCount", "$maxCount"] }
             }
         },
-        { //matching paramteres with specific rules
+        { //matching and filtering totalcount adn createdAt with specific rules
             $match: {
                 totalCount: {
                     $gte: parseInt(minCount),
