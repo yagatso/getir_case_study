@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\models",
+    "\\routes",
+    "\\startup",
+    "\\test",
+    "\\validations"
   ],
+  "SelectedNode": "\\node_modules",
   "PreviewInSolutionExplorer": false
 }

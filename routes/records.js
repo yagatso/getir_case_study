@@ -43,7 +43,7 @@ router.post('/', (req, res) => {
         }
     ]).exec()
         .then(data => {
-            res.status(200).json({
+            res.status(200).send({
                 code: 0,
                 msg: 'Success',
                 records: data

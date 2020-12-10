@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-
-module.exports = function () {
-    const db = process.env.db;
-    mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
-        .then(() => console.log('Connected'))
+module.exports = async function () {
+    mongoose
+        .connect(process.env.db, { useNewUrlParser: true, useUnifiedTopology: true })
+            .then(console.log('connected to db successfully'))
+            .catch(err => { console.err(err.message);
+     });
 }
