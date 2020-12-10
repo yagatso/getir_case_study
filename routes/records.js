@@ -4,7 +4,7 @@ var { Record } = require('../models/record');
 var validate = require('../validations/validate')
 
 
-router.post('/', async (req, res) => {
+router.post('/', (req, res) => {
 
     const { error } = validate(req.body);
     if (error) return res.status(400).send({
@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
     Record.aggregate([
         {
             $addFields: {
-                totalCount: { sum: ["$counts"] }
+                totalCount: { $sum: "$counts" }
             }
         },
         { //matching and filtering totalcount adn createdAt with specific rules
